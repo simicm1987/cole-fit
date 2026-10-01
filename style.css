@@ -1,0 +1,75 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-width: 1100px;
+  min-height: 760px;
+  background: #F3F5F9;
+  overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#appCanvas {
+  display: block;
+}
+
+#filePicker {
+  position: fixed;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+#openButton {
+  position: fixed;
+  left: 28px;
+  top: 14px;
+  width: 159px;
+  height: 42px;
+  z-index: 1001;
+  border: 0;
+  border-radius: 9px;
+  background: #176B9A;
+  color: #fff;
+  font: 13px Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+#openButton:hover {
+  background: #115578;
+}
+
+#openButton:disabled {
+  opacity: .65;
+  cursor: default;
+}
+
+#statusPanel {
+  position: fixed;
+  left: 50%;
+  top: 88px;
+  transform: translateX(-50%);
+  z-index: 1002;
+  max-width: min(900px, calc(100vw - 40px));
+  padding: 10px 14px;
+  border: 1px solid #DCE2EA;
+  border-radius: 8px;
+  background: rgba(255,255,255,.98);
+  color: #182431;
+  font-size: 13px;
+  line-height: 1.35;
+  box-shadow: 0 4px 18px rgba(0,0,0,.10);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+}
+
+#statusPanel.visible {
+  opacity: 1;
+}
+
+#statusPanel.error {
+  border-color: #D8433C;
+  color: #9F2F2A;
+  background: rgba(255,247,247,.98);
+}
